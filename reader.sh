@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 ######################################################################
 # rtl_fm   : does rtl fm'ish things
 # -d 0101  : device address - omit this if only one dongle
@@ -25,3 +25,4 @@ cd "${BASH_SOURCE%/*}" || exit
 rtl_fm -f 169.65M -M fm -s 22050 -p 0 - |
 multimon-ng -a FLEX -t raw /dev/stdin |
 node reader.js
+cd - >/dev/null
