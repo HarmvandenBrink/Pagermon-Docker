@@ -19,7 +19,7 @@ docker build -t pagermondocker .
 Please be aware to run the container with the correct RTL-SDR device attached. The code below should do the trick.
 
 ```bash
-docker run -it -p 3000:3000 -p 3306:3306 --privileged -v /dev/bus/usb:/dev/bus/usb pagermondocker
+docker run -it -p 3000:3000 --privileged -v /dev/bus/usb:/dev/bus/usb pagermondocker
 ```
 
 ## The interface and configuration
