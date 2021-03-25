@@ -1,0 +1,7 @@
+{
+  "apikey": "53W4UU1U2AS01WD53PUUCT40",
+  "hostname": "http://127.0.0.1:3000",
+  "identifier": "DockerPagermonFull",
+  "sendFunctionCode": false,
+  "useTimestamp": true
+}
