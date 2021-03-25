@@ -12,6 +12,10 @@ git clone https://github.com/HarmvandenBrink/Pagermon-Docker.git
 docker build -t pagermondocker .
 ```
 
+## Changing reader.sh
+
+This script was created to decode FLEX, specifically the P2000 network in the Netherlands (169.65MHz), please change this settings before building the Docker.
+
 ## Running the Docker
 
 Please be aware to run the container with the correct RTL-SDR device attached. The code below should do the trick.
