@@ -14,7 +14,13 @@ docker build -t pagermondocker .
 
 ## Changing reader.sh
 
-This script was created to decode FLEX, specifically the P2000 network in the Netherlands (169.65MHz), please change this settings before building the Docker.
+This script was created to decode FLEX, specifically the P2000 network in the Netherlands (169.65MHz), please change this settings before building the Docker. In a later version I'll make this files configurable (and mounted)
+
+```bash
+rtl_fm -f 169.65M -M fm -s 22050 -p 0 - |
+multimon-ng -a FLEX -t raw /dev/stdin |
+node reader.js
+```
 
 ## Running the Docker
 
