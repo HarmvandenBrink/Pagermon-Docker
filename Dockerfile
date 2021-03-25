@@ -12,9 +12,11 @@ COPY clientconfig.json /pagermon/client/config/config.json
 COPY serverconfig.json /pagermon/server/config/config.json
 COPY reader.sh /pagermon/client/reader.sh
 COPY no-rtl.conf /etc/modprobe.d/no-rtl.conf
+COPY start.sh /pagermon/start.sh
+RUN chmod +x /pagermon/start.sh
 RUN chmod +x /pagermon/client/reader.sh
 WORKDIR /pagermon/client
 RUN npm install nconf
 WORKDIR /pagermon/server
 RUN npm install
-CMD [ "pm2-runtime", "start", "process.json" ] && ./pagermon/client/reader.sh
+CMD /pagermon/start.sh
