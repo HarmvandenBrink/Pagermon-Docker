@@ -21,3 +21,14 @@ Please be aware to run the container with the correct RTL-SDR device attached. T
 ```bash
 docker run -it -p 3000:3000 -p 3306:3306 --privileged -v /dev/bus/usb:/dev/bus/usb pagermondocker
 ```
+
+## The interface and configuration
+
+```bash
+http://IP:3000
+```
+
+Username: admin
+Password: changeme
+
+The client and server from Pagermon are pre-attached using an API key
