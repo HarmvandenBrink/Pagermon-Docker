@@ -35,3 +35,8 @@ http://IP:3000
 Username: admin Password: changeme
 
 The client and server from Pagermon are pre-attached using an API key
+
+## MySQL (additional)
+
+docker run -d --name mysql-server -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=pagermon" mysql
+docker exec -i mysql-server mysql -uroot -ppagermon  <<< "create database pagermon;"
