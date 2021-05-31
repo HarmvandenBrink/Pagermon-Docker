@@ -39,9 +39,5 @@ The client and server from Pagermon are pre-attached using an API key
 ## MySQL (additional, change password!)
 
 ```bash
-docker run -d --restart always --name mysql-server -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=pagermon" mysql
-
-# After 1 minute:
-
-docker exec -i mysql-server mysql -uroot -ppagermon -e "create database pagermon;"
+docker run --name mysql-server -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pagermon -e MYSQL_DATABASE=pagermon -e MYSQL_ROOT_HOST=% -e "update user set authentication_string=password('pagermon'), plugin='mysql_native_password' where user='root';" -d mysql/mysql-server:latest
 ```
