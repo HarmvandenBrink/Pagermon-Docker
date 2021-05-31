@@ -40,5 +40,8 @@ The client and server from Pagermon are pre-attached using an API key
 
 ```bash
 docker run -d --restart always --name mysql-server -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=pagermon" mysql
+
+# After 1 minute:
+
 docker exec -i mysql-server mysql -uroot -ppagermon -e "create database pagermon;"
 ```
