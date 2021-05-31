@@ -27,7 +27,7 @@ node reader.js
 Please be aware to run the container with the correct RTL-SDR device attached. The code below should do the trick.
 
 ```bash
-docker run -it -p 3000:3000 --privileged -v /dev/bus/usb:/dev/bus/usb pagermondocker
+docker run -it -p 3000:3000 --privileged -d --restart always -v /dev/bus/usb:/dev/bus/usb pagermondocker
 ```
 
 ## The interface and configuration
@@ -36,7 +36,8 @@ Username: admin Password: changeme
 
 The client and server from Pagermon are pre-attached using an API key
 
-## MySQL (additional)
+## MySQL (additional, change password!)
 
-docker run -d --name mysql-server -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=pagermon" mysql
+```docker run -d --restart always --name mysql-server -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=pagermon" mysql
 docker exec -i mysql-server mysql -uroot -ppagermon  <<< "create database pagermon;"
+```
