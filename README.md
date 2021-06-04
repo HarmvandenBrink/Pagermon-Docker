@@ -28,7 +28,7 @@ node reader.js
 Please be aware to run the container with the correct RTL-SDR device attached. The code below should do the trick.
 
 ```bash
-docker run -it -p 3000:3000 --privileged -d --restart always -v /dev/bus/usb:/dev/bus/usb pagermondocker
+docker run -it -p 3000:3000 --name pagermon --privileged -d --restart always -v /dev/bus/usb:/dev/bus/usb pagermondocker
 ```
 
 ## The interface and configuration
