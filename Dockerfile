@@ -13,10 +13,13 @@ COPY serverconfig.json /pagermon/server/config/config.json
 COPY reader.sh /pagermon/client/reader.sh
 COPY no-rtl.conf /etc/modprobe.d/no-rtl.conf
 COPY start.sh /pagermon/start.sh
+COPY changeApi.sh /pagermon/changeApi.sh
+RUN chmod +x /pagermon/changeApi.sh
 RUN chmod +x /pagermon/start.sh
 RUN chmod +x /pagermon/client/reader.sh
 WORKDIR /pagermon/client
 RUN npm install nconf
 WORKDIR /pagermon/server
 RUN npm install
+RUN /pagermon/changeApi.sh
 CMD /pagermon/start.sh
