@@ -7,21 +7,21 @@ Dockerfile to install Pagermon in one go (with a few settings)
 git clone https://github.com/HarmvandenBrink/Pagermon-Docker.git
 ```
 
-## Building the Docker
-```bash
-docker build -t pagermondocker .
-```
-While building the Docker Image it'll create an unique API key and SessionKey for that specific image.
-
 ## Changing reader.sh
 
-This script was created to decode FLEX, specifically the P2000 network in the Netherlands (169.65MHz), please change this settings before building the Docker. In a later version I'll make this files configurable (and mounted)
+This script was created to decode FLEX, specifically the P2000 network in the Netherlands (169.65MHz), please change this settings before building the Docker. **It can't be changed afterwards**, you could however create multiple images for multiple decoders. In a later version I'll make this files configurable (and mounted)
 
 ```bash
 rtl_fm -f 169.65M -M fm -s 22050 -p 0 - |
 multimon-ng -a FLEX -t raw /dev/stdin |
 node reader.js
 ```
+
+## Building the Docker
+```bash
+docker build -t pagermondocker .
+```
+While building the Docker Image it'll create an unique API key and SessionKey for that specific image.
 
 ## Running the Docker
 
