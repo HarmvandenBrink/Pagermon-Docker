@@ -11,6 +11,7 @@ git clone https://github.com/HarmvandenBrink/Pagermon-Docker.git
 ```bash
 docker build -t pagermondocker .
 ```
+While building the Docker Image it'll create an unique API key and SessionKey for that specific image.
 
 ## Changing reader.sh
 
