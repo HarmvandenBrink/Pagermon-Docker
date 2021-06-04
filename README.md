@@ -1,5 +1,7 @@
 # Pagermon-Docker
-Dockerfile to install Pagermon in one go (with a few settings)
+Dockerfile to install Pagermon (server and client) in one go, without the need of installing all kinds of dependencies. It just works :)
+
+The latest version of Pagermon is cloned from their Github when building the image.
 
 ## Clone the repository
 
