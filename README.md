@@ -35,7 +35,6 @@ docker run -it -p 3000:3000 --name pagermon --privileged -d --restart always -v 
 http://IP:3000
 Username: admin Password: changeme
 
-The client and server from Pagermon are pre-attached using an API key
 
 ## MySQL (additional, change password!)
 
