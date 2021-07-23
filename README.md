@@ -41,7 +41,7 @@ Username: admin Password: changeme
 ## MySQL (additional, change password!)
 
 ```bash
-docker run --name mysql-server -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pagermon -e MYSQL_DATABASE=pagermon -e MYSQL_ROOT_HOST=% -d mysql/mysql-server:latest
+docker run --name mysql-server -p 3306:3306 -d --restart always -e MYSQL_ROOT_PASSWORD=pagermon -e MYSQL_DATABASE=pagermon -e MYSQL_ROOT_HOST=% -d mysql/mysql-server:latest
 ```
 
 After a minute or two run:
