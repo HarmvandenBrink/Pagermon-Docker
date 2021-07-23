@@ -51,7 +51,8 @@ docker exec -i mysql-server mysql -uroot -ppagermon -e "ALTER USER root IDENTIFI
 ```
 
 In Pagermon change the database to MySQL.
-```User: root
+```
+User: root
 Password: whateveryouset
 Database: pagermon
 ```
