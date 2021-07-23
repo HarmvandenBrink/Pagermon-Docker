@@ -42,5 +42,16 @@ Username: admin Password: changeme
 
 ```bash
 docker run --name mysql-server -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pagermon -e MYSQL_DATABASE=pagermon -e MYSQL_ROOT_HOST=% -d mysql/mysql-server:latest
+```
+
+After a minute or two run:
+
+```bash
 docker exec -i mysql-server mysql -uroot -ppagermon -e "ALTER USER root IDENTIFIED WITH mysql_native_password BY 'pagermon';"
+```
+
+In Pagermon change the database to MySQL.
+```User: root
+Password: whateveryouset
+Database: pagermon
 ```
